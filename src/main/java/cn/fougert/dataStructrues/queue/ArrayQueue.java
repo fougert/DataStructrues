@@ -4,6 +4,7 @@ package cn.fougert.dataStructrues.queue;
  * @author luhuan
  * @date 2024/7/30
  * @description
+ *    队列只能使用一次,无法复用
  **/
 public class ArrayQueue {
 
@@ -15,14 +16,43 @@ public class ArrayQueue {
     public ArrayQueue(int capacity){
         this.array = new int[capacity];
         this.maxSize = capacity ;
-        this.front = -1;
-        this.rear = - 1;
+        this.front = -1;            //队列头
+        this.rear = - 1;            //队列尾
     }
+
 
     private boolean empty(){
         return front == rear ;
     }
 
+    //队列是否满
+    private boolean isFull(){
+        return rear == maxSize - 1;
+    }
 
+    /**
+     * 队列添加元素
+     * @param
+     */
+    private void addQuene(int n){
+        if (isFull()){
+            throw new RuntimeException("队列已满");
+        }
+        rear ++ ;
+        array[rear] = n;
+
+    }
+
+    /**
+     * 队列删除元素
+     * @return
+     */
+    private int removeQuene(){
+        if (empty()){
+            throw new RuntimeException("队列为空");
+        }
+        front ++ ;
+        return array[front];
+    }
 
 }
