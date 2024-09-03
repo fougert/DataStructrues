@@ -36,7 +36,7 @@ public class ArrayQueue {
      */
     private void addQuene(int n){
         if (isFull()){
-            throw new RuntimeException("队列已满");
+            System.out.println("队列已满");
         }
         rear ++ ;
         array[rear] = n;
@@ -49,7 +49,8 @@ public class ArrayQueue {
      */
     private int removeQuene(){
         if (empty()){
-            throw new RuntimeException("队列为空");
+            System.out.println("队列为空");
+            return 0 ;
         }
         front ++ ;
         return array[front];
