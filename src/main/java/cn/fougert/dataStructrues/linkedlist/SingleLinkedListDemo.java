@@ -18,6 +18,10 @@ public class SingleLinkedListDemo {
      * @param headNode
      */
     public static void reverseList(Node headNode) {
+        //思路
+        //1、定义一个节点 reverseHead =  new Node
+        //2、从头到尾遍历原来的链表，每遍历一个节点，就将其取出，并放在新的链表的最前端
+        //3、将原来链表的头结点的next域 指向 reverseHead.next head.next = reverseHead.next
 
     }
 
@@ -147,10 +151,6 @@ class SingleLinkedList {
     public void addByNo(Node node) {
 
 
-    }
-
-
-    public void reverseList() {
     }
 
 
